@@ -8,7 +8,7 @@
 
 	var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 
-	var copy = document.querySelector("#copy");
+	var copy = "Tea";
 
 	var ww = canvas.width = window.innerWidth;
 	var wh = canvas.height = window.innerHeight;
