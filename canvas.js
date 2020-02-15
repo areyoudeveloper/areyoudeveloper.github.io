@@ -8,7 +8,7 @@
 
 	var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 
-	var copy = "Tea";
+	
 
 	var ww = canvas.width = window.innerWidth;
 	var wh = canvas.height = window.innerHeight;
@@ -86,7 +86,7 @@ function onTouchEnd(e){
 
 		ctx.font = "bold "+(ww/10)+"px sans-serif";
 		ctx.textAlign = "center";
-		ctx.fillText(copy.value, ww/2, wh/2);
+		ctx.fillText("Tea", ww/2, wh/2);
 
 		var data  = ctx.getImageData(0, 0, ww, wh).data;
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
