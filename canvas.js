@@ -84,7 +84,7 @@ function onTouchEnd(e){
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		ctx.font = "bold "+(ww/14)+"px sans-serif";
+		ctx.font = "bold "+(ww/8)+"px sans-serif";
 		ctx.textAlign = "center";
 		ctx.fillText("T E A", ww/2, wh/2);
 
