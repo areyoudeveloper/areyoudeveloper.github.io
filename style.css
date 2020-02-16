@@ -11,7 +11,7 @@
 			position: fixed;
 			bottom: 0px;
 			left: 0;
-			background: none;
+			background: black;
 			color: black;
 			font-size: 0px;
 			font-family: arial;
@@ -36,7 +36,7 @@ p2 {
   position: fixed;
   left: 0;
   bottom:0px;
-  color: #000003
+  color: #ffffff
   font-family: 'Public Sans';
   width: 60%;
   text-align: center;
