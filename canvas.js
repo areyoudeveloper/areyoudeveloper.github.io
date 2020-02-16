@@ -84,9 +84,9 @@ function onTouchEnd(e){
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		ctx.font = "bold "+(ww/10)+"px sans-serif";
+		ctx.font = "bold "+(ww/14)+"px sans-serif";
 		ctx.textAlign = "center";
-		ctx.fillText("Tea", ww/2, wh/2);
+		ctx.fillText("T E A", ww/2, wh/2);
 
 		var data  = ctx.getImageData(0, 0, ww, wh).data;
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
