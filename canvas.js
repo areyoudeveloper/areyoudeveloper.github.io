@@ -86,7 +86,7 @@ function onTouchEnd(e){
 
 		ctx.font = "bold "+(ww/8)+"px sans-serif";
 		ctx.textAlign = "center";
-		ctx.fillText("T E A", ww/2, wh/2);
+		ctx.fillText("K H A I R U L  M U S T A F A", ww/2, wh/2);
 
 		var data  = ctx.getImageData(0, 0, ww, wh).data;
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
