@@ -1,7 +1,104 @@
-<!doctype html>
-<html>
+.container
+  .front
+    .decrement 
+    .value_front 0
+    .increment
+  .back
+    .decrement
+    .value_back 0
+    .increment
+@import url(https://fonts.googleapis.com/css?family=Roboto-Mono)
 
-<head>
-<meta http-equiv="refresh" content="0; URL=http://10.9.49.48/" />
-</head>
-</html>
+$bgColor = #a3be8c
+$containerColor = transparent
+$containerWidth = 272px
+$containerHeight = 100px
+$containerBorderRadius = 4px
+
+*
+  transition all .5s
+  box-sizing border-box
+
+body
+  background $bgColor
+  margin 0
+  padding 0
+  display flex
+  justify-content center
+  align-items center
+  width 100vw
+  height 100vh
+  perspective 300px
+  .container
+    background $containerColor
+    border-radius $containerBorderRadius
+    width $containerWidth
+    height $containerHeight
+    transform rotateY(0deg)
+    transform-style preserve-3d
+    .front
+      background white
+      transform rotateY(0deg)
+      z-index 2
+    .back
+      background white
+      transform rotateY(180deg)
+    .front, .back
+      position absolute
+      display flex
+      align-items center
+      justify-content space-between
+      backface-visibility hidden
+      width $containerWidth
+      height $containerHeight
+      border-radius $containerBorderRadius
+      .decrement, .increment
+        width 64px
+        height $containerHeight
+        opacity .2
+        &:hover
+          cursor pointer
+      .decrement
+        background url("http://frolovoleg.ru/images/decrement.svg") no-repeat center
+      .increment
+        background url("http://frolovoleg.ru/images/increment.svg") no-repeat center
+      .value_front, .value_back
+        user-select none
+        font-size 32px
+        line-height $containerHeight
+        font-family "Roboto Mono", "Courier", monospace
+$(document).ready ->
+
+  zero = 0
+  rotateY = 180
+  value = 0
+  count = 0
+
+  setValueFunc = () ->
+    if count % 2 == 0
+      $(".value_front").text(value)
+    else
+      $(".value_back").text(value)
+
+  $(".increment").on "mouseenter", ->
+    $(".increment").css("opacity": "1")
+    $(".decrement").css("opacity": ".2")
+
+  $(".container").on "mouseout", ->
+    $(".increment").css("opacity": ".2")
+    $(".decrement").css("opacity": ".2")
+
+  $(".decrement").on "mouseenter", ->
+    $(".decrement").css("opacity": "1")
+    $(".increment").css("opacity": ".2")
+
+  $(".increment").on "mousedown", ->
+    count++
+    $(".container").css("transform": "rotateY(#{zero = zero + rotateY}deg)")
+    value++
+    setValueFunc()
+  $(".decrement").on "mousedown", ->
+    count++
+    $(".container").css("transform": "rotateY(#{zero = zero - rotateY}deg)")
+    value--
+    setValueFunc()
